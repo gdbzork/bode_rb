@@ -9,9 +9,9 @@ module Position
   @@chromPat = /^chr(\d+)(_\w+)?$/
   @@strandPat = /[+-.]/
 
-  # Assign a chromosome.  Raises ArgumentError if no a string of some sort.
+  # Assign a chromosome.  Raises ArgumentError if not a string of some sort.
   def chrom=(c)
-    # Can't predict what it migth look like, but must at least be a string
+    # Can't predict what it might look like, but must at least be a string
     if c.kind_of?(String)
       @chrom = c
     else
@@ -97,7 +97,7 @@ module Position
   # of course.)  The usual comparison operators are also supported
   # via inclusion of "Comparable".
   #
-  # Chromsomes that are numbered are compared numerically (i.e. chr2 < chr11),
+  # Chromosomes that are numbered are compared numerically (i.e. chr2 < chr11),
   # and if they have suffixes (i.e. chr6_hapXXX) then the 6 is compared
   # numerically but the suffix is compared lexicographically.  Other
   # chromosomes (e.g. chrX) are compared lexicographically (if *either*
